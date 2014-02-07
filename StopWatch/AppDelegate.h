@@ -14,7 +14,7 @@
 @property (strong, nonatomic) NSTimer *timer;
 @property (weak) IBOutlet NSWindow *window;
 @property (weak) IBOutlet NSTextField *labelField;
-@property (weak) IBOutlet NSButton *stopButton;
+@property (weak) IBOutlet NSButton *pauseButton;
 @property (weak) IBOutlet NSButton *startButton;
 
 - (IBAction)start:(id)sender;

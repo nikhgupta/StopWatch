@@ -13,7 +13,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // on app start, we want to show the stop button as disabled.
-    [self.stopButton setEnabled:NO];
+    [self.pauseButton setEnabled:NO];
 }
 
 - (IBAction)start:(id)sender {
@@ -25,11 +25,11 @@
     [self.startButton setTitle:@"Restart"];
     
     // and, enable the pause/resume button.
-    [self.stopButton setEnabled:YES];
+    [self.pauseButton setEnabled:YES];
     
     // and, make sure that that button says 'Pause'
-    [self.stopButton setNextState];
-    [self.stopButton setKeyEquivalent:@"\r"];
+    [self.pauseButton setNextState];
+    [self.pauseButton setKeyEquivalent:@"\r"];
     // space bar should not fire any button
     [self.window makeFirstResponder:nil];
 }

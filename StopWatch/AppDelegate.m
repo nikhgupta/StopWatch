@@ -29,6 +29,9 @@
     
     // and, make sure that that button says 'Pause'
     [self.stopButton setNextState];
+    [self.stopButton setKeyEquivalent:@"\r"];
+    // space bar should not fire any button
+    [self.window makeFirstResponder:nil];
 }
 
 - (IBAction)pauseOrResume:(id)sender {
@@ -38,11 +41,15 @@
         self.timer = nil;
         // and, enable the start button.
         [self.startButton setEnabled:YES];
+        // make start button as the first responder
+        [self.window makeFirstResponder:self.startButton];
     } else {
         // when the user clicks resume, we resume the watch
         [self startTimer :[self.labelField doubleValue]];
         // and, disable the start button.
         [self.startButton setEnabled:NO];
+        // make start button as the first responder
+        [self.window makeFirstResponder:nil];
     }
 }
 
